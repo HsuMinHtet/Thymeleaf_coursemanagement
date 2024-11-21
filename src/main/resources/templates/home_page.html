@@ -1,0 +1,26 @@
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+    <head>
+        <title>Home page</title>
+    </head>
+    <body>
+        <h1>Home page</h1>
+        <h2 th:text="'Welcome to , ' + ${courseName} + '!'"/>
+       <form th:action="@{/api/v1/courses}" method="post" th:object="${courseRequestDTO}">
+            <Label>Course Name:</Label>
+           <label>
+               <input type="text" th:field="${courseRequestDTO.courseName}" placeholder="Course Name"/>
+           </label>
+           <Label>Course Code: </Label>
+           <label>
+               <input type="text" th:field="${courseRequestDTO.courseCode}" placeholder="Course Code"/>
+           </label>
+           <Label>Course Desc: </Label>
+           <label>
+               <input type="text" th:field="${courseRequestDTO.courseDescription}" placeholder="Course Description"/>
+           </label>
+           <input type="submit" value="submit"/>
+       </form>
+
+
+    </body>
+</html>
